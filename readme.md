@@ -13,14 +13,14 @@ A teeny little timer buddy to help you time your time.
 
 ### Python 
 1. Clone git repository
-2. Install Dependencies: `pip install pyyaml`
-3. Run: `python3 kanbuddy.py`
+2. Install Dependencies: `pip install playsound3`
+3. Run: `python3 timerbuddy.py`
 
 You can just run it with python every time, but if you'd like to build a binary from the script, you can run:
 
 ```
-pip install pyinstaller pyyaml pillow
-pyinstaller --onefile --icon=icon.png kanbuddy.py
+pip install pyinstaller 
+pyinstaller --onefile --icon=icon.png timerbuddy.py
 ```
 
 ## Operation
