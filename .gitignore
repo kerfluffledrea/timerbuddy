@@ -1,5 +1,4 @@
 *.csv
-*.spec
 kanbuddy
 settings.yaml
 /dist
