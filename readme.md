@@ -1,7 +1,7 @@
 
 
 # -[0:0]- Timer Buddy 
-A teeny little timer buddy to help you time your time.
+A teeny tactile timer buddy to help you time your time.
 
 <img width="100" height="45" alt="TimerGif" src="https://github.com/user-attachments/assets/2691d393-521d-4880-b34c-e6c8719a6478" />
 
