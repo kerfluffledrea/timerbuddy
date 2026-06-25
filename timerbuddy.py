@@ -112,8 +112,6 @@ def resource_path(relative_path):
         return os.path.join(sys._MEIPASS, relative_path)
     return os.path.join(os.path.abspath("."), relative_path)
 
-
-
 # No Touchie
 STARTUP_SOUND = mixer.Sound(resource_path("sfx/start.wav"))
 ALARM_SOUND = mixer.Sound(resource_path("sfx/alarm.wav"))
