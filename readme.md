@@ -1,13 +1,14 @@
 
 
-# -[OwO]- Timer Buddy 
+# -[0:0]- Timer Buddy 
 A teeny little timer buddy to help you time your time.
 
-![buddy](https://github.com/user-attachments/assets/917514e5-8f72-42ac-8461-ae4413108d78)
+<img width="100" height="45" alt="TimerGif" src="https://github.com/user-attachments/assets/2691d393-521d-4880-b34c-e6c8719a6478" />
 
 ### Features
-- Sick-ass style
+- Sick-ass style w/ themes
 - Extremely Tactile Operation with Sound Effects (can be disabled)
+- Progress Bar
 - Smol
 
 ## Installation
