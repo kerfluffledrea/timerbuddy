@@ -32,3 +32,6 @@ pyinstaller timerbuddy.spec
 - Left-Click & Drag : Edit Time
 - Middle-Click : Start / Stop Timer
 - Right Click : Context Menu
+
+# Fun Fact!
+This project was the result of me needing a timer, obviously. But while looking around, unsatisfied with the options available to me on linux, I had the thought "Oh I could probably make something so quickly and easily with like, ONE AI prompt." The immediate shame that followed lead me into an engineer-brained mania wherein I got carried away and made the best timer application I could. 0 AI Was used in the making of this application.
