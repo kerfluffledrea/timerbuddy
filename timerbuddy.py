@@ -43,8 +43,8 @@ WIDTH = SETTINGS['width']
 HEIGHT = SETTINGS['height']
 FONT = SETTINGS['font']['card']
 TIMERFONT = SETTINGS['font']['timer']
-
 GLOBALRELIEF = None
+
 if str(sys.platform).lower() == 'win32' or str(sys.platform).lower() == 'darwin':
     GLOBALRELIEF = tk.RAISED
 else:
@@ -176,6 +176,8 @@ class Timer:
         self.alarm_plays.set(0)
         self.menu_sfx = tk.BooleanVar()
         self.menu_sfx.set(True)
+        self.rolling = tk.BooleanVar()
+        self.rolling.set(False)
 
         # TODO: IDK What to do with this lol
         if os.path.isfile(mod_path+"/icon.png"):
@@ -285,7 +287,6 @@ class Timer:
 
     def stopTimer(self):
         TIMERSTOP_SOUND.play()
-        self.timer_when_full = None
         self.timer_started = False
         self.updateDisplays()
 
@@ -302,6 +303,9 @@ class Timer:
         self.stopTimer()
         self.updateDisplays()
         self.alarmColorChange()
+        if self.rolling.get():
+            self.time = self.timer_when_full
+            self.startTimer()
 
     def alarmColorChange(self):
         if self.alarm_flips % 2 == 0:
@@ -404,6 +408,7 @@ class Timer:
         themes_menu.add_radiobutton(label="Fortress", variable=self.selected_theme, value='fortress', command=lambda: self.setTheme('fortress'))
         themes_menu.add_radiobutton(label="Peachy", variable=self.selected_theme, value='peach', command=lambda: self.setTheme('peach'))
         themes_menu.add_radiobutton(label="ihaveahax", variable=self.selected_theme, value='ihaveahax', command=lambda: self.setTheme('ihaveahax'))
+        themes_menu.add_command(label="Scream", command=lambda: self.scream())
         themes_menu.add_radiobutton(label="Custom", variable=self.selected_theme, value='custom', command=lambda: self.setTheme('custom'))
         
         alarm_plays_menu = tk.Menu(self.context_menu, tearoff=0, bg=self.theme['bg'], fg=self.theme['secondary'], selectcolor=self.theme['secondary'], font=FONT)
@@ -421,7 +426,7 @@ class Timer:
         self.context_menu.add_cascade(label="Play Alarm...", menu=alarm_plays_menu)
         self.context_menu.add_cascade(label="Theme...", menu=themes_menu)
         self.context_menu.add_checkbutton(label="Menu SFX", variable=self.menu_sfx, onvalue=1, offvalue=0, command=lambda: self.toggleInteractionsMuted())
-        self.context_menu.add_command(label="Scream", command=lambda: self.scream())
+        self.context_menu.add_checkbutton(label="Rolling Timer", variable=self.rolling, onvalue=1, offvalue=0)
         self.context_menu.add_command(label="Quit", command=lambda: sys.exit())
         self.context_menu.post(event.x_root, event.y_root)
     
