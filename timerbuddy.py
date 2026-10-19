@@ -168,7 +168,7 @@ class Timer:
         self.selected_theme = tk.StringVar(value=theme_name)
         self.updateAlwaysOntop()
         self.setTheme(theme_name)
-        self.alarm_flips = 0        
+        self.alarm_flips = 0
         self.time = datetime.datetime(year=1000,month=1,day=1,hour=0,minute=5,second=0)
         self.timer_started = False
         self.timer_when_full = None
